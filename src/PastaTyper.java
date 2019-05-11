@@ -25,8 +25,7 @@ public class PastaTyper
         {
             char letter = pasta.charAt(i);
             int currentChar = (int) letter;
-            int keyCode = KeyEvent.getExtendedKeyCodeForChar(currentChar);
-            robot.delay(10);
+            robot.delay(20);
             try
             {
                 if (Character.isUpperCase(letter))
@@ -78,12 +77,16 @@ public class PastaTyper
             x += 1;
             if (x >= 50 && letter == ' ')
             {
+                robot.keyPress(KeyEvent.VK_ENTER);
+                robot.keyRelease(KeyEvent.VK_ENTER);
                 robot.delay(500);
                 robot.keyPress(KeyEvent.VK_ENTER);
                 robot.keyRelease(KeyEvent.VK_ENTER);
                 x = 0;
             }
         }
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
     }
 
     public void setPasta(String pasta)

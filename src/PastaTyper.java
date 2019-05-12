@@ -12,7 +12,8 @@ public class PastaTyper
         try
         {
             this.robot = new Robot();
-        } catch (AWTException e)
+        }
+        catch (AWTException e)
         {
             e.printStackTrace();
         }
@@ -24,8 +25,8 @@ public class PastaTyper
         for (int i = 0; i < pasta.length(); i++)
         {
             char letter = pasta.charAt(i);
-            int currentChar = (int) letter;
-            robot.delay(20);
+            int currentChar = (int)letter;
+            robot.delay(15);
             try
             {
                 if (Character.isUpperCase(letter))
@@ -71,6 +72,16 @@ public class PastaTyper
                     case '-':
                         robot.keyPress(KeyEvent.VK_MINUS);
                         break;
+                    case '(':
+                        robot.keyPress(KeyEvent.VK_SHIFT);
+                        robot.keyPress(KeyEvent.VK_9);
+                        robot.keyRelease(KeyEvent.VK_9);
+                        break;
+                    case ')':
+                        robot.keyPress(KeyEvent.VK_SHIFT);
+                        robot.keyPress(KeyEvent.VK_0);
+                        robot.keyRelease(KeyEvent.VK_0);
+                        break;
                 }
                 robot.keyRelease(KeyEvent.VK_SHIFT);
             }
@@ -79,9 +90,10 @@ public class PastaTyper
             {
                 robot.keyPress(KeyEvent.VK_ENTER);
                 robot.keyRelease(KeyEvent.VK_ENTER);
-                robot.delay(500);
+                robot.delay(100);
                 robot.keyPress(KeyEvent.VK_ENTER);
                 robot.keyRelease(KeyEvent.VK_ENTER);
+                robot.delay(100);
                 x = 0;
             }
         }

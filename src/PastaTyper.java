@@ -212,7 +212,7 @@ public class PastaTyper
             if (words >= wordsBeforeNewLine)
             {
                 robot.keyPress(KeyEvent.VK_ENTER);
-                robot.keyPress(KeyEvent.VK_ENTER);
+                robot.keyRelease(KeyEvent.VK_ENTER);
                 inputNewLine();
                 words = 0;
             }

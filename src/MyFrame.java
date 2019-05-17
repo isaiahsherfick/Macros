@@ -6,9 +6,10 @@ public class MyFrame extends JFrame
     public MyFrame(String title)
     {
         super(title);
+	Container pane = getContentPane();
 
         //Set layout manager
-        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+        setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
 
         //Create Swing components
         JButton ns = new JButton("Navy Seal");
@@ -17,10 +18,12 @@ public class MyFrame extends JFrame
         ns.setAlignmentX(Component.CENTER_ALIGNMENT);
         ram.setAlignmentX(Component.CENTER_ALIGNMENT);
         ah.setAlignmentX(Component.CENTER_ALIGNMENT);
+	ns.setPreferredSize(new Dimension(100,100));
+	ram.setPreferredSize(new Dimension(100,100));
+	ah.setPreferredSize(new Dimension(100,100));
 
         //Add components to content pane
 
-        Container pane = getContentPane();
         pane.add(ns);
         pane.add(ram);
         pane.add(ah);

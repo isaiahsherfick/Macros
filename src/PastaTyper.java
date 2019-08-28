@@ -141,6 +141,14 @@ public class PastaTyper
 
     public void pastePasta()
     {
+        try
+        {
+            Thread.sleep(1500);
+        }
+        catch(InterruptedException e)
+        {
+            e.printStackTrace();
+        }
         int words = 0;
         for (int i = 0; i < pasta.length(); i++)
         {
